@@ -1,0 +1,57 @@
+.redirect-component {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    .bg-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+    }
+    .redirect-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        width: 300px;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+        border-radius: 10px;
+        .progress-bar-img {
+            width: auto;
+            height: 50px;
+            filter: grayscale(100%);
+        }
+        .logo-img {
+            height: 100px;
+            border-radius: 50%;
+            width: auto;
+            object-fit: cover;
+        }
+        .redirect-heading {
+            font-weight: 700;
+        }
+        .not-redirected-text {
+            font-size: 80%;
+        }
+        .redirect-text {
+            font-size: 90%;
+        }
+        .project-img {
+            height: 20px;
+        }
+        .m-b-10 {
+            margin-bottom: 10px;
+        }
+        .m-b-5 {
+            margin-bottom: 5px;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@if (redirectProperties) {
+    <div class="redirect-component">
+        <img
+            class="bg-image"
+            [src]="redirectProperties.background_url"
+            alt="Background Image"
+        />
+        <div class="redirect-container">
+            <div>
+                <img
+                    class="logo-img m-b-10"
+                    src="assets/logo.png"
+                    alt="MS Designs Logo"
+                />
+            </div>
+            <span class="redirect-heading"> Hang Tight! </span>
+            <br />
+            <span class="redirect-text">You will be shortly redirected to</span>
+            <br />
+            <div>
+                <img
+                    class="project-img m-b-10"
+                    [src]="'assets/' + this.redirectKey + '.svg'"
+                    alt=""
+                />
+            </div>
+            <div>
+                <img
+                    class="progress-bar-img"
+                    src="assets/progress_bar.gif"
+                    alt="progress bar"
+                />
+            </div>
+            <br />
+            <a
+                #redirect_btn
+                class="not-redirected-text"
+                [href]="redirectProperties.redirect_to"
+                >Click here, if you are not automatically redirected.</a
+            >
+        </div>
+    </div>
+} @else {
+    404 Page not found
+}
