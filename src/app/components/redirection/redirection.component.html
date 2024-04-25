@@ -1,0 +1,31 @@
+@if (redirectProperties) {
+    <div class="redirect-component">
+        <img
+            class="bg-image"
+            [src]="redirectProperties.background_url"
+            alt="Background Image"
+        />
+        <div class="redirect-container">
+            <div>
+                <img
+                    class="logo-img m-b-10"
+                    src="assets/logo.png"
+                    alt="MS Designs Logo"
+                />
+            </div>
+            <span class="redirect-heading"> Hang Tight! </span>
+            <br />
+            <span class="redirect-text m-b-10"
+                >Please wait while you are being redirected to</span
+            >
+
+            <div>
+                <img
+                    class="progress-bar-img"
+                    src="assets/progress_bar.gif"
+                    alt="progress bar"
+                />
+            </div>
+        </div>
+    </div>
+} @else {}
