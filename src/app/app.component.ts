@@ -27,7 +27,6 @@ export class AppComponent {
         this.json$ = this.httpclient.get('../assets/redirect.json').pipe(
             tap((data) => {
                 this.directory = data as redirect
-                console.log(this.directory)
             })
         )
     }

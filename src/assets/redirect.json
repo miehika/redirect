@@ -1,7 +1,27 @@
 {
     "zaykaebhopal": {
-        "background_url": "https://ik.imagekit.io/miehika/cdn/tr:orig-true/print10.png",
+        "background_url": "https://ik.imagekit.io/miehika/zaykaebhopal",
         "project_name": "Zayka-e-Bhopal",
+        "redirect_to": "https://www.behance.net/gallery/119196073/Zayka-e-Bhopal-Travel-Food-Magazine"
+    },
+    "triply": {
+        "background_url": "https://ik.imagekit.io/miehika/triply",
+        "project_name": "Triply",
+        "redirect_to": "https://www.behance.net/gallery/119196073/Zayka-e-Bhopal-Travel-Food-Magazine"
+    },
+    "akasaair": {
+        "background_url": "https://ik.imagekit.io/miehika/akasaair",
+        "project_name": "Akasa Air",
+        "redirect_to": "https://www.behance.net/gallery/119196073/Zayka-e-Bhopal-Travel-Food-Magazine"
+    },
+    "nmfe": {
+        "background_url": "https://ik.imagekit.io/miehika/nmfe",
+        "project_name": "NMFe",
+        "redirect_to": "https://www.behance.net/gallery/119196073/Zayka-e-Bhopal-Travel-Food-Magazine"
+    },
+    "frostyvinto": {
+        "background_url": "https://ik.imagekit.io/miehika/frostyvinto",
+        "project_name": "Frosty Vinto",
         "redirect_to": "https://www.behance.net/gallery/119196073/Zayka-e-Bhopal-Travel-Food-Magazine"
     }
 }

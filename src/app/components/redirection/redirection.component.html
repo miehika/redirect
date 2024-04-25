@@ -15,10 +15,15 @@
             </div>
             <span class="redirect-heading"> Hang Tight! </span>
             <br />
-            <span class="redirect-text m-b-10"
-                >Please wait while you are being redirected to</span
-            >
-
+            <span class="redirect-text">You will be shortly redirected to</span>
+            <br />
+            <div>
+                <img
+                    class="project-img m-b-10"
+                    [src]="'assets/' + this.redirectKey + '.svg'"
+                    alt=""
+                />
+            </div>
             <div>
                 <img
                     class="progress-bar-img"
@@ -26,6 +31,15 @@
                     alt="progress bar"
                 />
             </div>
+            <br />
+            <a
+                #redirect_btn
+                class="not-redirected-text"
+                [href]="redirectProperties.redirect_to"
+                >Click here, if you are not automatically redirected.</a
+            >
         </div>
     </div>
-} @else {}
+} @else {
+    404 Page not found
+}
