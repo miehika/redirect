@@ -2,13 +2,13 @@ import {
     AfterViewInit,
     Component,
     ElementRef,
-    Input,
     OnInit,
     ViewChild,
 } from '@angular/core'
-import { redirect, redirectProperties } from '../../interfaces/redirect'
-import { ActivatedRoute, Router } from '@angular/router'
-import { Location } from '@angular/common'
+import { redirectProperties } from '../../interfaces/redirect'
+import { ActivatedRoute } from '@angular/router'
+import { SharedService } from '../../services/shared.service'
+import { combineLatest, filter, tap } from 'rxjs'
 @Component({
     selector: 'app-redirection',
     standalone: true,
@@ -18,26 +18,25 @@ import { Location } from '@angular/common'
 })
 export class RedirectionComponent implements OnInit, AfterViewInit {
     @ViewChild('redirect_btn') redirect_btn!: ElementRef<HTMLElement>
-    @Input() set directory(data: redirect) {
-        this._directory = data
-    }
 
-    get directory() {
-        return this._directory
-    }
-
-    _directory: redirect = {}
     redirectKey!: string
     redirectProperties!: redirectProperties
     constructor(
         private route: ActivatedRoute,
-        private location: Location
+        private sharedService: SharedService
     ) {}
     ngOnInit(): void {
-        this.route.queryParams.subscribe((data) => {
-            this.redirectKey = data['project']
-            this.redirectProperties = this.directory[this.redirectKey]
-        })
+        combineLatest([
+            this.route.params,
+            this.sharedService.directory$.pipe(filter((a) => a)),
+        ])
+            .pipe(
+                tap(([routeParams, directory]) => {
+                    this.redirectKey = routeParams['project']
+                    this.redirectProperties = directory[this.redirectKey]
+                })
+            )
+            .subscribe()
     }
     ngAfterViewInit(): void {
         if (this.redirectProperties?.redirect_to) {

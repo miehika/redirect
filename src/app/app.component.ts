@@ -5,6 +5,7 @@ import { RedirectionComponent } from './components/redirection/redirection.compo
 import { redirect } from './interfaces/redirect'
 import { Observable, tap } from 'rxjs'
 import { CommonModule } from '@angular/common'
+import { SharedService } from './services/shared.service'
 
 @Component({
     selector: 'app-root',
@@ -22,11 +23,15 @@ export class AppComponent {
     title = 'Redirecting...'
     directory: redirect = {}
     json$!: Observable<any>
-    constructor(private httpclient: HttpClient) {}
+    constructor(
+        private httpclient: HttpClient,
+        private sharedService: SharedService
+    ) {}
     ngOnInit(): void {
         this.json$ = this.httpclient.get('../assets/redirect.json').pipe(
             tap((data) => {
                 this.directory = data as redirect
+                this.sharedService.directory$.next(this.directory)
             })
         )
     }

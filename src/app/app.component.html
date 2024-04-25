@@ -1,7 +1,8 @@
 @if (json$ | async) {
     @defer {
-        <app-redirection [directory]="directory"></app-redirection>
+        <router-outlet></router-outlet>
     }
 } @else {
-    hello
+    Unable to load Data. Please reach out through
+    <a href="https://instagram.com/miehikasahu">Instagram</a>
 }
