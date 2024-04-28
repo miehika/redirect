@@ -1,0 +1,14 @@
+.loader-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    .logo-img {
+        height: 25vh;
+        border-radius: 50%;
+        width: auto;
+        object-fit: cover;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
